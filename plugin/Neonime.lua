@@ -1,6 +1,6 @@
 plugin = {}
 
-function plugin.getinfo(url)
+local function getinfo(url)
   url = "https://doujindesu.id"
   dirurl = url .. "/komik-list/page/".. current_page .."/?title=&order=update&status=&type="
   Http.get(dirurl,function(code,content)
@@ -30,4 +30,5 @@ function plugin.getinfo(url)
   end)
 end
 
+plugin.getinfo = getinfo
 return plugin

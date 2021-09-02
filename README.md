@@ -1,2 +1,2 @@
 # AnimeOngoing_id
-Just Testing
+Plugin

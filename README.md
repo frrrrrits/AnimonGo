@@ -1,13 +1,9 @@
 #Plugin
-``` 
-  
--- parse dengan jsoup
--- @jsouparse
 
--- parse dengan xpath
--- @xpathparse
+- `@httpGetInfo(str,function)` muat url.
+ 
+- `@jsouparse` mengunakan jsoup.
 
--- Menambahkan data
--- @addGetInfoData
+- `@xpathparse` mengunakan xpath.
 
-```
+- `@addGetInfoData(str)` menambahkan data.

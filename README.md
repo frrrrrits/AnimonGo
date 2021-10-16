@@ -1,15 +1,17 @@
 ## Example ##
 
-- html
-    <html><body>
+html
+
+    -<html><body>
         <div class="animepost">
              <div class='title'>some body</div>
              <div class='episode'>Two</div>
         </div>
-     </body></html>
+    -</body></html>
 
-- lua
-      
+
+lua
+  
      httpGetInfo(url_path,function()
          -- menggunakan jsoup        
          -- tambahkan semuanya ke table
@@ -20,6 +22,7 @@
              addGetInfoData(url,title,cover,episode)
          end
      end)
+
 
 ## Function ##
 - `@httpGetInfo(str,function)` muat url.

@@ -14,8 +14,7 @@ Html example
 Lua
   
      httpGetInfo(url_path,function()
-         -- menggunakan jsoup        
-         -- tambahkan semuanya ke table
+         -- menggunakan jsoup
          asbtable = jsoup.astable(jsouparse,'animepost') -- sudah termasuk getElementsByClass("animepost")
 
          -- gunakan iterasi @loop 
@@ -40,7 +39,7 @@ Lua
          episode = xpathparse.sel(animepost..'/div[@class="episode"]/')
          
          for index=0, #title-1
-             addGetInfoData(url,title,cover,episode)
+             addGetInfoData(url[index],title[index],cover[index],episode[index])
          end
      end)
 

@@ -18,9 +18,8 @@ Lua
          -- tambahkan semuanya ke table
          asbtable = jsoup.astable(jsouparse,'animepost') -- sudah termasuk getElementsByClass("animepost")
 
-         -- gunakan pungsi @loop 
-         for index,content in ipairs(astable)
-             -- decode
+         -- gunakan iterasi @loop 
+         for index,content in ipairs(astable)           
              byfragment = jsoup.byfragment(content)
 
              -- scrape
@@ -32,14 +31,25 @@ Lua
              -- tambahkan ke data
              addGetInfoData(url,title,cover,episode)
          end
+        
+
+         -- mengunakan xpath
+         animepost = '//div[@class="animepost"]/'
+         url = xpathparse.sel(animepost..'/a@href/')
+         title = xpathparse.sel(animepost..'/div[@class="title"]/')
+         episode = xpathparse.sel(animepost..'/div[@class="episode"]/')
+         
+         for index=0, #title-1
+             addGetInfoData(url,title,cover,episode)
+         end
      end)
 
 
-## Function ##
+## Operator ##
 - `@httpGetInfo(str,function)` muat url.
  
 - `@jsouparse` mengunakan jsoup.
 
 - `@xpathparse` mengunakan xpath.
 
-- `@addGetInfoData(str,str,str,str)` menambahkan data.
+- `@addGetInfoData(url,title,cover,episode)` menambahkan data.

@@ -15,7 +15,7 @@ local function getinfo()
   path_url = ("%s/page path url/%s"):format(getbaseurl(),current_page)  
   -- @httpGetInfo: hanya untuk getinfo
   httpGetInfo(path_url,function()
-    -- gunakan metode @loop
+    -- gunakan iterator @loop
     -- tambahkan data
     addGetInfoData(
        url,title,

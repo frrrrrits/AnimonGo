@@ -1,6 +1,6 @@
 #Plugin
 ``` 
-   
+  
 -- parse dengan jsoup
 -- @jsouparse
 
@@ -9,3 +9,5 @@
 
 -- Menambahkan data
 -- @addGetInfoData
+
+```

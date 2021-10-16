@@ -1,11 +1,24 @@
 ## Example ##
+
+- html
+    <html><body>
+        <div class="animepost">
+             <div class='title'>some body</div>
+             <div class='episode'>Two</div>
+        </div>
+     </body></html>
+
+- lua
       
      httpGetInfo(url_path,function()
-         -- menggunakan jsoup
-         asbtable = jsoup.astable(jsouparse,'animepost')
+         -- menggunakan jsoup        
+         -- tambahkan semuanya ke table
+         asbtable = jsoup.astable(jsouparse,'animepost') -- sudah termasuk getElementsByClass("animepost")
          -- gunakan pungsi @loop 
          for index,content in ipairs(astable)
-         end    
+             byfragment = jsoup.byfragment(content)
+             addGetInfoData(url,title,cover,episode)
+         end
      end)
 
 ## Function ##
@@ -15,4 +28,4 @@
 
 - `@xpathparse` mengunakan xpath.
 
-- `@addGetInfoData(str)` menambahkan data.
+- `@addGetInfoData(str,str,str,str)` menambahkan data.

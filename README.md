@@ -1,13 +1,12 @@
 ## Example ##
-
-   httpGetInfo(url_path,function()
-      -- menggunakan jsoup
-      asbtable = jsoup.astable(jsouparse,'animepost')
-      -- gunakan pungsi @loop 
-      for index,content in ipairs(astable)
-        
-      end    
-   end)
+      
+     httpGetInfo(url_path,function()
+         -- menggunakan jsoup
+         asbtable = jsoup.astable(jsouparse,'animepost')
+         -- gunakan pungsi @loop 
+         for index,content in ipairs(astable)
+         end    
+     end)
 
 ## Function ##
 - `@httpGetInfo(str,function)` muat url.

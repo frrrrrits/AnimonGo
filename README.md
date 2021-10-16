@@ -1,10 +1,11 @@
 #Plugin
-    
-    -- parse dengan jsoup
-    -- @jsouparse
+``` 
+   
+-- parse dengan jsoup
+-- @jsouparse
 
-    -- parse dengan xpath
-    -- @xpathparse
+-- parse dengan xpath
+-- @xpathparse
 
-    -- Menambahkan data
-    -- @addGetInfoData
+-- Menambahkan data
+-- @addGetInfoData

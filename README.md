@@ -17,7 +17,7 @@ Lua
          -- menggunakan jsoup
          asbtable = jsoup.astable(jsouparse,'animepost') -- sudah termasuk getElementsByClass("animepost")
 
-         -- gunakan iterasi @loop 
+         -- gunakan iterator @loop 
          for index,content in ipairs(astable)           
              byfragment = jsoup.byfragment(content)
 

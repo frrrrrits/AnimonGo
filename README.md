@@ -35,7 +35,7 @@ Lua
 
          -- mengunakan xpath
          animepost = '//div[@class="animepost"]/'
-         url = xpathparse.sel(animepost..'/a@href/')
+         url = xpathparse.sel(animepost..'a@href/')
          title = xpathparse.sel(animepost..'/div[@class="title"]/')
          episode = xpathparse.sel(animepost..'/div[@class="episode"]/')
          
@@ -46,7 +46,7 @@ Lua
 
 
 ## Operator ##
-- `@httpGetInfo(str,function)` muat url.
+- `@httpGetInfo(path_url,function)` muat url.
  
 - `@jsouparse` mengunakan jsoup.
 

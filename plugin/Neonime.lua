@@ -7,9 +7,7 @@ end
 
 local function getinfo()
   --- %s untuk string
-  path_url = ("%s/episode/page/%s"):format(getbaseurl(),current_page)
-
-  httpGetInfo(path_url,function()
+  httpGetInfo("%s/episode/page/%s",getbaseurl(),function()
     classbb = '//td[@class="bb"]/'
 
     title = xpathparse.sel(classbb..'a/@href//text()')

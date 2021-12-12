@@ -1,5 +1,6 @@
 -- created by frrrrrits
--- on 2021/12/7
+-- on 2021/12/7 v1.0.0 created
+-- on 2021/12/12 v1.0.1 changelog: add trailer elements.
 
 baseUrl = 'https://neonime.cc'
 
@@ -32,6 +33,8 @@ function fetchDetail(info,genre,document)
   info.status=document.select("div.metadatac b:contains(TV Status) + span").text()
   info.cover=document.select("div.imagen > img").attr("data-src")
   info.description=document.select("div.contenidotv > div > p").text()
+  info.trailer=document.select("div[id=trailer] meta[itemprop=embedUrl]").attr("content")
+
   if !hasload then
     -- biar ga nambah genre nya ketika di refresh
     while genreElement.hasNext() do

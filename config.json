@@ -5,14 +5,16 @@
       "icon": "https://neonime.live/wp-content/uploads/2017/12/favicon.png",
       "name": "Neonime",
       "versionName": "1.0.2",
-      "versionCode": 3
+      "versionCode": 3,
+      "streamAble": true
     },
     {
       "id": "id.lxs.animongo.Lendrive",
       "icon": "https://lendrive.web.id/wp-content/uploads/2021/11/Lendrive-03-November-2021.png",
       "name": "Lendrive",
       "versionName": "1.0.2",
-      "versionCode": 3
+      "versionCode": 3,
+      "streamAble": false
     }
   ]
 }

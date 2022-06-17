@@ -3,7 +3,7 @@
 -- on 2021/12/12 v1.0.1 changelog: add trailer elements.
 -- on 2022/6/17 v1.0.2 changelog: add streaming elements.
  
-baseUrl = 'https://neonime.cc'
+baseUrl = 'https://neonime.watch'
 
 latestUpdateUrl = '%s/episode/page/%s'
 latestSelector = 'div[id=episodes] > table > tbody td.bb'

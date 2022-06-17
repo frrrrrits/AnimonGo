@@ -1,6 +1,7 @@
 -- created by frrrrrits
 -- on 2021/12/7 v1.0.0 created
 -- on 2021/12/9 v1.0.1 changelog: fix cover image selector, add trailer elements.
+-- on 2022/6/17 v1.0.2 updated
 
 baseUrl = "https://lendrive.web.id/"
 
@@ -9,6 +10,7 @@ latestSelector = "div.bixbox.bbnofrm > div.releases.latesthome + div.listupd.nor
 episodeSelector = "div.bixbox.bxcl.epcheck li"
 downloadSelector = "div.soraddlx.soradlg div.soraurlx"
 
+streamable = false
 local detailUrlSelector = "div.nvs.nvsc > a"
 local hasload = false
 

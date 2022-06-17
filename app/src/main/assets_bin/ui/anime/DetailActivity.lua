@@ -123,8 +123,7 @@ function onCreate(bundle)
   idsmain.tabs.setupWithViewPager(idsmain.viewpager)
 
   Insetter.builder()
-  .margin(WindowInsetsCompat.Type.navigationBars(),
-  Side.create(true,false,false,false,true,true))
+  .padding(WindowInsetsCompat.Type.navigationBars())
   .applyToView(idsmain.mainlay)
 end
 

@@ -22,11 +22,14 @@ function Source.download(data,url)
   local id = data.id
   local icon = data.icon
   local name = data.name
+  local streamAble = data.streamAble
+  local stream = "Tidak support streaming"
+  if streamAble then stream = "Support streaming" end  
+  
   local versionName = data.versionName
-  local versionCode = data.versionCode
-    
+  local versionCode = data.versionCode 
   local url=("%s/%s.lua"):format(RELEASE_URL,name)
-  local message=("Name - %s\nVersion - %s"):format(name,versionName)
+  local message=("Name - %s\nVersion - %s\n\n%s"):format(name,versionName,stream)
   local fileName=("%s.lua"):format(name)
   
   MaterialAlertDialogBuilder(this)

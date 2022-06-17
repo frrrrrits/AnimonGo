@@ -170,8 +170,8 @@ return function(data, adapter)
         if name then
           views.title.text = name
           views.version.text = "Version: ".. version
-          views.title.textAppearance=uihelper.m3appreance("TitleMedium")
-          views.version.textAppearance=uihelper.m3appreance("BodyMedium")
+          views.title.textAppearance = uihelper.m3appreance("TitleMedium")
+          views.version.textAppearance = uihelper.m3appreance("BodyMedium")
         end
         if cover then
           local requestOptions = RequestOptions()

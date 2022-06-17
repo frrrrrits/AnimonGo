@@ -11,30 +11,30 @@ local function newInstance()
     layout_width="match_parent",
     id="mainlay",
     {
-    AppBarLayout,
-    id="appbar",
-    layout_height="wrap_content",
-    layout_width="match_parent",
-    fitsSystemWindows="true",
-    elevation="0dp",
-    liftOnScroll=true,
-    {
-      CollapsingToolbarLayout,
-      id="collaps",
-      layout_height="109dp",
+      AppBarLayout,
+      id="appbar",
+      layout_height="wrap_content",
       layout_width="match_parent",
-      layout_scrollFlags="scroll|exitUtilCollapsed",
+      fitsSystemWindows="true",
+      elevation="0dp",
+      liftOnScroll=true,
       {
-        MaterialToolbar,
-        elevation="0dp",
-        layout_height=theme.number.actionBarSize,
+        CollapsingToolbarLayout,
+        id="collaps",
+        layout_height="109dp",
         layout_width="match_parent",
-        id="toolbar",
-        layout_collapseMode="pin",
-        backgroundColor=0,
-      },
-    }
-  },
+        layout_scrollFlags="scroll|exitUtilCollapsed",
+        {
+          MaterialToolbar,
+          elevation="0dp",
+          layout_height=theme.number.actionBarSize,
+          layout_width="match_parent",
+          id="toolbar",
+          layout_collapseMode="pin",
+          backgroundColor=0,
+        },
+      }
+    },
     {
       SwipeRefreshLayout,
       id="swiperefresh",
@@ -50,12 +50,12 @@ local function newInstance()
   }
 
   local ids={}
-  local data={}  
-  local data_type={banner=1,list=2}  
+  local data={}
+  local data_type={banner=1,list=2}
   local fragment=LuaFragment.newInstance()
 
   ids.fragment = fragment
- 
+
   browse_adapter = BrowseAdapter(data, adapter)
 
   fragment.setCreator(LuaFragment.FragmentCreator{
@@ -65,7 +65,7 @@ local function newInstance()
     onResume=function()
       window.statusBarColor = 0
     end,
-    onViewCreated = function(view, savedInstanceState)         
+    onViewCreated = function(view, savedInstanceState)
       ActivityUtil.fadeThrough(fragment,ids.mainlay)
 
       activity.setSupportActionBar(ids.toolbar)
@@ -78,16 +78,11 @@ local function newInstance()
       ids.recycler.adapter = browse_adapter
       ids.recycler.setLayoutManager(layoutManager)
 
-      Insetter.builder()
-      .margin(WindowInsetsCompat.Type.navigationBars(),
-      Side.create(true,true,true,true))
-      .applyToView(ids.swiperefresh)
-
       ids.swiperefresh.setOnRefreshListener{
         onRefresh=function()
           getFetchSource(data,browse_adapter,ids,true)
         end
-      }        
+      }
       getFetchSource(data,browse_adapter,ids,true)
     end,
     onConfigurationChanged=function(config) end

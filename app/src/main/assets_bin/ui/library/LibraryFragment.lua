@@ -107,11 +107,6 @@ local function newInstance()
     ids.recycler.setLayoutManager(manager)
     ids.recycler.columnWidth = uihelper.dp2int(140)
     ids.recycler.setHasFixedSize(true)
-
-    Insetter.builder()
-    .margin(WindowInsetsCompat.Type.navigationBars(),
-    Side.create(true,true,true,true))
-    .applyToView(ids.swiperefresh)
   end
 
   local function onFavorite()
@@ -169,7 +164,7 @@ local function newInstance()
       actionbar.setTitle(R.string.label_library)
 
       ThemedSwipeRefresh().init(ids.swiperefresh).distanceToTrigger()
-
+     
       ids.mainlay.onTouch=function(view,...)
         ids.recycler.onTouchEvent(...)
       end

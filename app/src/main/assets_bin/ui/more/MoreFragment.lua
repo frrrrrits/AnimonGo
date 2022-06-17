@@ -11,7 +11,6 @@ local function newInstance()
     id = "mainlay",
     layout_height = "fill",
     layout_width = "fill",
-    fitsSystemWindows = "true",
     {
       AppBarLayout,
       id="appbar",

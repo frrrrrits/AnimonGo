@@ -31,14 +31,14 @@ function onCreate(bundle)
 
   bottomNav = activity.findViewById(R.id.bottom_nav)
   bottomNav.setLabelVisibilityMode(0)
-  --bottomNav.setElevation
-
-  ActivityUtil.setRoot(fragment_library.newInstance())
-
-  InsetBuilder.margin(WindowInsetsCompat.Type.navigationBars(),
-  Side.create(true,true,true,true))
-  .applyToView(bottomNav)
-
+  
+  ActivityUtil.setRoot(fragment_library.newInstance()) 
+  WindowCompat.setDecorFitsSystemWindows(window, false) 
+  
+  Insetter.builder()
+  .padding(WindowInsetsCompat.Type.navigationBars())
+  .applyToView(root)
+  
   UpdateAlert:createNotificationChannel(context)
 
   bottomNav.setOnNavigationItemSelectedListener{
@@ -79,16 +79,6 @@ function onCreate(bundle)
   end
 
   AppCompatDelegate.setDefaultNightMode(mode)
-
-  ViewCompat.setOnApplyWindowInsetsListener(root, OnApplyWindowInsetsListener({
-    onApplyWindowInsets=function(view, insets)
-      if insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom > 0 then
-        window.setNavigationBarColor(theme.color.elevationOverlay)
-      end
-      return insets
-    end
-  }))
-  ViewCompat.requestApplyInsets(root)
 end
 
 function setFragmentRoot(position,fragment)

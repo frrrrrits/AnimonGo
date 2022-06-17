@@ -1,17 +1,20 @@
 -- created by frrrrrits
 -- on 2021/12/7 v1.0.0 created
 -- on 2021/12/12 v1.0.1 changelog: add trailer elements.
-
+-- on 2022/6/17 v1.0.2 changelog: add streaming elements.
+ 
 baseUrl = 'https://neonime.cc'
 
 latestUpdateUrl = '%s/episode/page/%s'
 latestSelector = 'div[id=episodes] > table > tbody td.bb'
 episodeSelector = 'ul.episodios> > li'
 downloadSelector = 'div.linkstv > div.sbox li'
+streamSelector = '.player2 > .embed2 > div[id*=player]'
 
 local genreSelector = 'div.metadatac b:contains(Genre) + span > a'
 local detailUrlSelector = 'div.metadatac b:contains(Serie) + span > a'
 local hasload = false
+streamable = true
 
 -- ambil url ke detail info animenya
 function detailUrl(document)
@@ -55,12 +58,15 @@ function fetchEpisodeList(document)
   date=document.select('div.episodiotitle > span.date').text()
 end
 
+function fetchStreamingLinks(element, jsoup)
+   url = element.select("iframe").attr("data-src")
+end
+
 function fetchDownload(data,document)
   local liElement=document.select("li")
   if tostring(liElement):match("<li>MP4</li>") then
    elseif tostring(liElement):match("<li>MKV</li>") then
    else local labelElement=liElement.select("label")
-    -- url elements harus utuh a nya ex:(<a href=url>teks</a>)
     local url=document.select("a")
     local title=labelElement.text()
     updateDownload(data,url,title)

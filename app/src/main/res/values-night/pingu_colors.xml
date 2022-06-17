@@ -1,0 +1,30 @@
+<resources>
+    <color name="pingu_primary">#FFB4A9</color>
+    <color name="pingu_onPrimary">#680003</color>
+    <color name="pingu_primaryContainer">#930006</color>
+    <color name="pingu_onPrimaryContainer" >#FFDAD4</color>
+    <color name="pingu_secondary">#E7BCB7</color>
+    <color name="pingu_onSecondary">#442926</color>
+    <color name="pingu_secondaryContainer">#5D3F3B</color>
+    <color name="pingu_onSecondaryContainer">#FFDAD5</color>
+    <color name="pingu_tertiary">#E0C38C</color>
+    <color name="pingu_onTertiary">#3F2E04</color>
+    <color name="pingu_tertiaryContainer">#574419</color>
+    <color name="pingu_onTertiaryContainer">#FDDFA6</color>
+    <color name="pingu_error">#FFB4A9</color>
+    <color name="pingu_errorContainer">#930006</color>
+    <color name="pingu_onError">#680003</color>
+    <color name="pingu_onErrorContainer">#FFDAD4</color>
+    <color name="pingu_background">#211A19</color>
+    <color name="pingu_onBackground">#EDE0DE</color>
+    <color name="pingu_surface">#211A19</color>
+    <color name="pingu_onSurface">#EDE0DE</color>
+    <color name="pingu_surfaceVariant">#534341</color>
+    <color name="pingu_onSurfaceVariant">#D8C1BE</color>
+    <color name="pingu_outline">#A08C89</color>
+    <color name="pingu_inverseOnSurface">#211A19</color>
+    <color name="pingu_inverseSurface">#EDE0DE</color>
+    <color name="pingu_inversePrimary">#C0000F</color>
+    <color name="pingu_shadow">#000000</color>
+    <color name="pingu_primaryInverse">#C0000F</color>
+</resources>

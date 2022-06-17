@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>  
+    <attr name="colorFilterActive" format="reference|integer"/>
+    <attr name="lightSystemBarsOnPrimary" format="reference|boolean"/>
+
+    <!-- Setting chip color values for specific themes -->
+    <attr name="chipTextColor" format="reference|integer"/>
+</resources>

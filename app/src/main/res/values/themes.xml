@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--============-->
+    <!-- Base Theme -->
+    <!--============-->
+
+    <!--== Theme Base ==-->
+    <style name="Base.Theme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Disallow "Force dark theme" -->
+        <item name="android:forceDarkAllowed" tools:targetApi="Q">false</item>
+
+        <!-- Theme Colors -->
+        <item name="colorPrimary">@color/default_primary</item>
+        <item name="colorOnPrimary">@color/default_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/default_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/default_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/default_secondary</item>
+        <item name="colorOnSecondary">@color/default_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/default_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/default_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/default_tertiary</item>
+        <item name="colorOnTertiary">@color/default_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/default_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/default_onTertiaryContainer</item>
+        <item name="android:colorBackground">@color/default_background</item>
+        <item name="colorOnBackground">@color/default_onBackground</item>
+        <item name="colorSurface">@color/default_surface</item>
+        <item name="colorOnSurface">@color/default_onSurface</item>
+        <item name="colorSurfaceVariant">@color/default_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/default_onSurfaceVariant</item>
+        <item name="colorOutline">@color/default_outline</item>
+        <item name="colorOnSurfaceInverse">@color/default_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/default_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/default_primaryInverse</item>
+
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorErrorContainer">@color/errorContainer</item>
+        <item name="colorOnErrorContainer">@color/onErrorContainer</item>
+
+        <item name="android:divider">@color/divider_default</item>
+        <item name="android:listDivider">@drawable/line_divider</item>
+
+        <!-- Ripples -->
+        <item name="colorControlHighlight">?attr/colorSurfaceVariant</item>
+
+        <!-- Themes -->
+        <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/surface_amoled</item>
+        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@null</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="Q">false</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance.Widget.Menu</item>
+        <item name="android:alertDialogTheme">@style/ThemeOverlay.MaterialAlertDialog</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Widget.Button</item>
+        <item name="android:buttonStyle">@style/Widget.Material3.Button</item>
+        <item name="android:backgroundDimAmount">0.32</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionOverflowButtonStyle">@style/Theme.ActionButton.Overflow</item>
+        <item name="actionModeCloseButtonStyle">@style/Theme.ActionMode.CloseButton</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.BottomSheetDialog</item>
+        <item name="chipStyle">@style/Widget.Chip.Action</item>
+        <item name="chipTextColor">?android:attr/textColorPrimary</item>
+        <item name="chipBackgroundColor">?android:attr/divider</item>
+        <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.FilledBox</item>
+        <item name="appBarLayoutStyle">@style/Widget.Material3.AppBarLayout</item>
+        <item name="toolbarStyle">@style/Widget.Material3.Toolbar.Surface</item>
+        <item name="tabStyle">@style/Widget.TabLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.Material3.BottomNavigationView</item>
+        <item name="navigationRailStyle">@style/Widget.NavigationRailView</item>
+        <item name="switchStyle">@style/Widget.Switch</item>
+        <item name="sliderStyle">@style/Widget.Slider</item>
+        <item name="materialCardViewStyle">@style/Widget.Material3.CardView.Filled</item>
+        <item name="lightSystemBarsOnPrimary">false</item>
+    </style>
+
+    <!--== Default Theme ==-->
+    <style name="Theme.Animongo" parent="Base.Theme" />
+
+    <style name="Theme.Animongo.Pingu">
+        <item name="colorPrimary">@color/pingu_primary</item>
+        <item name="colorOnPrimary">@color/pingu_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/pingu_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pingu_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/pingu_secondary</item>
+        <item name="colorOnSecondary">@color/pingu_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/pingu_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/pingu_onSecondaryContainer
+        </item>
+        <item name="colorTertiary">@color/pingu_tertiary</item>
+        <item name="colorOnTertiary">@color/pingu_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/pingu_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/pingu_onTertiaryContainer
+        </item>
+        <item name="colorError">@color/pingu_error</item>
+        <item name="colorErrorContainer">@color/pingu_errorContainer</item>
+        <item name="colorOnError">@color/pingu_onError</item>
+        <item name="colorOnErrorContainer">@color/pingu_onErrorContainer</item>
+        <item name="android:colorBackground">@color/pingu_background</item>
+        <item name="colorOnBackground">@color/pingu_onBackground</item>
+        <item name="colorSurface">@color/pingu_surface</item>
+        <item name="colorOnSurface">@color/pingu_onSurface</item>
+        <item name="colorSurfaceVariant">@color/pingu_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/pingu_onSurfaceVariant</item>
+        <item name="colorOutline">@color/pingu_outline</item>
+        <item name="colorOnSurfaceInverse">@color/pingu_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/pingu_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/pingu_primaryInverse</item>
+    </style>
+
+    <style name="Theme.Animongo.Gurein">
+        <item name="colorPrimary">@color/gurein_primary</item>
+        <item name="colorOnPrimary">@color/gurein_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/gurein_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/gurein_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/gurein_secondary</item>
+        <item name="colorOnSecondary">@color/gurein_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/gurein_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/gurein_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/gurein_tertiary</item>
+        <item name="colorOnTertiary">@color/gurein_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/gurein_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/gurein_onTertiaryContainer</item>
+        <item name="colorError">@color/gurein_error</item>
+        <item name="colorErrorContainer">@color/gurein_errorContainer</item>
+        <item name="colorOnError">@color/gurein_onError</item>
+        <item name="colorOnErrorContainer">@color/gurein_onErrorContainer</item>
+        <item name="android:colorBackground">@color/gurein_background</item>
+        <item name="colorOnBackground">@color/pingu_onBackground</item>
+        <item name="colorSurface">@color/gurein_surface</item>
+        <item name="colorOnSurface">@color/gurein_onSurface</item>
+        <item name="colorSurfaceVariant">@color/gurein_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/gurein_onSurfaceVariant</item>
+        <item name="colorOutline">@color/gurein_outline</item>
+        <item name="colorOnSurfaceInverse">@color/gurein_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/gurein_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/gurein_primaryInverse</item>
+    </style>
+
+</resources>

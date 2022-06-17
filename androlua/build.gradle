@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "32.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1599
+        versionName "1.5(5.0.10)"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable = true
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'src/main/libs'
+            jni.srcDirs = []
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation "com.google.android.material:material:${materialVersion}"
+
+    // network
+    implementation "com.squareup.okhttp3:okhttp:${okhttp3Version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okhttp3Version}"
+    implementation "com.squareup.okhttp3:okhttp-dnsoverhttps:${okhttp3Version}"
+
+    implementation 'org.conscrypt:conscrypt-android:2.5.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // implementation 'androidx.work:work-runtime:2.7.1'
+}

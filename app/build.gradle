@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "32.0.0"
+
+    defaultConfig {
+        applicationId "id.lxs.animongo"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 1002
+        versionName "1.0.2"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    signingConfigs {
+        release {
+            Properties properties = new Properties()
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            storeFile file(properties.getProperty("storeFilePath"))
+            storePassword properties.getProperty("storePassword")
+            keyPassword properties.getProperty("keyPassword")
+            keyAlias properties.getProperty("keyAlias")
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            // applicationIdSuffix ".debug"
+        }
+        release {
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable = true
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'src/main/libs'
+            jni.srcDirs = []
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(':androlua')
+
+    // google & androidx
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.core:core:1.7.0'
+    implementation "com.google.android.material:material:${materialVersion}"
+    implementation 'androidx.browser:browser:1.4.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
+    implementation 'dev.chrisbanes.insetter:insetter:0.6.0'
+
+    // imageloader
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // html scrape http
+    implementation "org.jsoup:jsoup:1.14.3"
+
+    // exoplayer
+    implementation "com.google.android.exoplayer:exoplayer:${exoplayerVersion}"
+    implementation "com.google.android.exoplayer:exoplayer-ui:${exoplayerVersion}"
+}

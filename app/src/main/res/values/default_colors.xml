@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_primary">#0057CE</color>
+    <color name="default_onPrimary">#FFFFFF</color>
+    <color name="default_primaryContainer">#D8E2FF</color>
+    <color name="default_onPrimaryContainer">#001947</color>
+    <color name="default_secondary">#0057CE</color>
+    <color name="default_onSecondary">#FFFFFF</color>
+    <color name="default_secondaryContainer">#D8E2FF</color>
+    <color name="default_onSecondaryContainer">#001947</color>
+    <color name="default_tertiary">#006E17</color>
+    <color name="default_onTertiary">#FFFFFF</color>
+    <color name="default_tertiaryContainer">#95F990</color>
+    <color name="default_onTertiaryContainer">#002202</color>
+    <color name="default_background">#FDFBFF</color>
+    <color name="default_onBackground">#1B1B1E</color>
+    <color name="default_surface">#FDFBFF</color>
+    <color name="default_onSurface">#1B1B1E</color>
+    <color name="default_surfaceVariant">#E1E2EC</color>
+    <color name="default_onSurfaceVariant">#44464E</color>
+    <color name="default_outline">#757780</color>
+    <color name="default_inverseOnSurface">#F2F0F4</color>
+    <color name="default_inverseSurface">#303033</color>
+    <color name="default_primaryInverse">#AEC6FF</color>
+</resources>

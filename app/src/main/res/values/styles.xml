@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From Tachiyomi -->
+    
+    <!--========-->
+    <!--Toolbars-->
+    <!--========-->
+    <style name="Theme.ActionMode.CloseButton" parent="Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:tint">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Theme.ActionButton.Overflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">?attr/colorOnSurface</item>
+    </style>
+
+
+    <!--===========-->
+    <!--AlertDialog-->
+    <!--===========-->
+    <style name="ThemeOverlay.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="android:textColorPrimary">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Alert.Dialog.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Button</item>
+    </style>
+
+
+    <!--===========-->
+    <!--BottomSheet-->
+    <!--===========-->
+    <style name="ThemeOverlay.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.BottomSheet.Modal</item>
+        <item name="android:windowAnimationStyle">@style/Animation.BottomSheetDialog</item>
+    </style>
+
+    <style name="Widget.BottomSheet.Modal" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:elevation">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/dialog_radius</item>
+        <item name="cornerSizeTopLeft">@dimen/dialog_radius</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="Animation.BottomSheetDialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/bottom_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_sheet_slide_out</item>
+    </style>
+
+
+    <!--===============-->
+    <!--Text Appearance-->
+    <!--===============-->
+    <style name="TextAppearance.Widget.Button" parent="TextAppearance.Material3.TitleSmall" />
+
+    <style name="TextAppearance.Widget.Menu" parent="TextAppearance.AppCompat.Menu">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+
+    <style name="TextAppearance.SectionHeader" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+
+
+    <!--=======-->
+    <!--Widgets-->
+    <!--=======-->
+    <style name="Widget.GridView" parent="android:Widget">
+        <item name="android:smoothScrollbar">true</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+    </style>
+
+    <style name="Widget.GridView.Source">
+        <item name="android:gravity">top|left</item>
+        <item name="android:smoothScrollbar">true</item>
+        <item name="android:cacheColorHint">?android:attr/textColorHint</item>
+        <item name="android:fastScrollEnabled">true</item>
+        <item name="android:horizontalSpacing">0dp</item>
+        <item name="android:verticalSpacing">0dp</item>
+    </style>
+
+
+    <style name="Widget.SpinnerItem" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:background">@drawable/list_item_selector</item>
+    </style>
+
+
+    <style name="Widget.Chip.Action" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipBackgroundColor">?attr/chipBackgroundColor</item>
+        <item name="android:textColor">?attr/chipTextColor</item>
+        <item name="rippleColor">?attr/colorControlHighlight</item>
+        <item name="chipStrokeWidth">0dp</item>
+
+        <!-- Smaller text/height -->
+        <item name="chipMinHeight">28dp</item>
+
+        <!-- Collapse horizontal margin -->
+        <item name="chipMinTouchTargetSize">28dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
+
+        <!-- Custom chip states -->
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+
+    <style name="Widget.CircularProgressIndicator.Small" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorSize">16dp</item>
+        <item name="trackThickness">2dp</item>
+    </style>
+
+
+    <style name="Widget.Button.ActionButton" parent="Widget.Material3.Button.TextButton.Icon">
+        <item name="iconGravity">top</item>
+        <item name="iconTint">@color/button_action_selector</item>
+        <item name="iconPadding">4dp</item>
+        <item name="android:textColor">@color/button_action_selector</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Widget.Button.InlineButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="backgroundTint">@null</item>
+        <item name="rippleColor">@null</item>
+    </style>
+
+    <style name="Widget.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton" />
+
+
+    <!--=================-->
+    <!--Widgets.TabLayout-->
+    <!--=================-->
+    <style name="Widget.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabInlineLabel">true</item>
+        <item name="tabMinWidth">75dp</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabRippleColor">@color/ripple_toolbar_fainter</item>
+    </style>
+
+
+    <!--==============-->
+    <!--Widgets.Switch-->
+    <!--==============-->
+    <style name="Widget.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.Switch" parent="">
+        <item name="elevationOverlayEnabled">@bool/elevationOverlayEnabled</item>
+    </style>
+
+    <!--==============-->
+    <!--Widgets.Slider-->
+    <!--==============-->
+    <style name="Widget.Slider" parent="Widget.Material3.Slider">
+        <item name="labelBehavior">gone</item>
+        <item name="tickVisible">false</item>
+    </style>
+
+
+    <!--================-->
+    <!--Navigation Views-->
+    <!--================-->
+    <style name="Widget.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemPaddingBottom">10dp</item>
+        <item name="itemPaddingTop">10dp</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.NavigationRailView" parent="Widget.Material3.NavigationRailView">
+        <item name="itemRippleColor">@color/ripple_toolbar_fainter</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+
+    <!--================-->
+    <!--Shape Appearance-->
+    <!--================-->
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Tracker" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Dialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dialog_radius</item>
+    </style>
+    
+    <style name="ShapeAppearanceOverlay.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/button_radius</item>
+    </style>
+    
+    <style name="ThemeOverlay.Dialog.Fullscreen" parent="ThemeOverlay.MaterialComponents">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Dialog</item>
+    </style>
+
+    <style name="Animation.Dialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/fade_in_short</item>
+        <item name="android:windowExitAnimation">@anim/fade_out_short</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<resources>
+    <color name="gurein_primary">#006E0D</color>
+    <color name="gurein_onPrimary">#FFFFFF</color>
+    <color name="gurein_primaryContainer">#98F989</color>
+    <color name="gurein_onPrimaryContainer">#002200</color>
+    <color name="gurein_secondary">#53634E</color>
+    <color name="gurein_onSecondary">#FFFFFF</color>
+    <color name="gurein_secondaryContainer">#D6E8CD</color>
+    <color name="gurein_onSecondaryContainer">#111F0E</color>
+    <color name="gurein_tertiary">#386569</color>
+    <color name="gurein_onTertiary">#FFFFFF</color>
+    <color name="gurein_tertiaryContainer">#BCEBEF</color>
+    <color name="gurein_onTertiaryContainer">#002022</color>
+    <color name="gurein_error">#BA1B1B</color>
+    <color name="gurein_errorContainer">#FFDAD4</color>
+    <color name="gurein_onError">#FFFFFF</color>
+    <color name="gurein_onErrorContainer">#410001</color>
+    <color name="gurein_background">#FCFCF6</color>
+    <color name="gurein_onBackground">#1A1C19</color>
+    <color name="gurein_surface">#FCFCF6</color>
+    <color name="gurein_onSurface">#1A1C19</color>
+    <color name="gurein_surfaceVariant">#DFE5D8</color>
+    <color name="gurein_onSurfaceVariant">#42493F</color>
+    <color name="gurein_outline">#73796F</color>
+    <color name="gurein_inverseOnSurface">#F1F1EB</color>
+    <color name="gurein_inverseSurface">#2E312C</color>
+    <color name="gurein_inversePrimary">#7DDC6F</color>
+    <color name="gurein_shadow">#000000</color>
+    <color name="gurein_primaryInverse">#7DDC6F</color>
+</resources>

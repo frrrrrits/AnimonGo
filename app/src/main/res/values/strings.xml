@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AnimonGo</string>
+    <string name="action_close">close</string>
+    <string name="action_share">Share</string>
+    <string name="label_library">Mengikuti</string>
+    <string name="label_more">Lainnya</string>
+    <string name="label_browse">Browse</string>
+    <string name="display_mode">Display Mode</string>
+    <string name="player_space_dots">•</string>
+    <string name="action_display_grid">Compact Grid</string>
+    <string name="action_display_list">List</string>
+    <string name="action_webview">Buka di Webview</string>
+    <string name="action_search">Pencarian</string>
+  </resources>

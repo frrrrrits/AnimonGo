@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="bottom_sheet_width">0dp</dimen>
+
+    <dimen name="space_between_cards">4dp</dimen>
+    <dimen name="card_radius">6dp</dimen>
+    <dimen name="card_selector_radius">6dp</dimen>
+    <dimen name="dialog_radius">15dp</dimen>
+    <dimen name="button_radius">200dp</dimen>
+    
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_list_padding">88dp</dimen>
+
+    <dimen name="action_toolbar_list_padding">72dp</dimen>
+
+    <dimen name="screen_edge_margin">16dp</dimen>
+
+    <dimen name="exo_icon_size" tools:keep="@dimen/exo_icon_size">90dp</dimen>
+    <dimen name="controls_padding">170sp</dimen>
+    <dimen name="exo_styled_progress_margin_bottom" tools:keep="@dimen/exo_styled_progress_margin_bottom">51dp</dimen>
+
+</resources>

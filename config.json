@@ -15,6 +15,14 @@
       "versionName": "1.0.2",
       "versionCode": 3,
       "streamAble": false
+    },
+    {
+      "id": "id.lxs.animongo.Kuramanime",
+      "icon": "https://kuramanime.com/images/icons/icon-384x384.png",
+      "name": "Kuramanime",
+      "versionName": "1.0.0",
+      "versionCode": 1,
+      "streamAble": true
     }
   ]
 }

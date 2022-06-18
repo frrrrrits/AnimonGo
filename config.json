@@ -23,6 +23,14 @@
       "versionName": "1.0.0",
       "versionCode": 1,
       "streamAble": true
+    },
+    {
+      "id": "id.lxs.animongo.Kuronime",
+      "icon": "https://d1fdloi71mui9q.cloudfront.net/kplt1FY0Qv6k6fz4PDYl_QN7fw7iAnLBVl3gz",
+      "name": "Kuronime",
+      "versionName": "1.0.0",
+      "versionCode": 1,
+      "streamAble": true
     }
   ]
 }

@@ -27,6 +27,10 @@ local first = function()
   return tbutil.first(tbdata.SourceStream)
 end
 
+local function extractorAble()
+  return BrowseSource.useExtractor()
+end
+
 function Reset()
   initplayer = false
   urlloaded = false
@@ -40,8 +44,12 @@ function Reset()
 end
 
 PlayerSource.fetchStreamUrl = function(episode)
+  local data = tbdata.StreamUrl
+  if extractorAble() == false then
+    data = tbdata.SourceStream
+  end
   local mepisode = episode or PlayerSource.currentEpisode
-  BrowseSource.fetchStreamUrl(mepisode.url, tbdata.StreamUrl)
+  BrowseSource.fetchStreamUrl(mepisode.url, data)
 end
 
 PlayerSource.InitStreamUrl = function()
@@ -86,7 +94,7 @@ PlayerSource.getNextEpisode = function()
   local isNextEpisode = positionReverse(episode, currentPosition)
   if not isNextEpisode then isNextEpisode = nil return end
   -- re position
-  local reversed = currentPosition - 1  
+  local reversed = currentPosition - 1
   if reversedPosition then
     reversed = currentPosition + 1
   end
@@ -107,17 +115,25 @@ end
 PlayerSource.runhandler = function()
   runnable = Runnable({
     run = function()
-      if isemptytable(tbdata.StreamUrl) then
-        handler.postDelayed(runnable, 600)
-       else
-        if urlloaded == false then
-          PlayerSource.getSourceUrl()
-        end
-        urlloaded = true
+      if extractorAble() == false then
         if not isemptytable(tbdata.SourceStream) then
           PlayerSource.InitStreamUrl()
          else
           handler.postDelayed(runnable, 600)
+        end
+       elseif extractorAble() == true or extractorAble() == nil then
+        if isemptytable(tbdata.StreamUrl) then
+          handler.postDelayed(runnable, 600)
+         else
+          if urlloaded == false then
+            PlayerSource.getSourceUrl()
+          end
+          urlloaded = true
+          if not isemptytable(tbdata.SourceStream) then
+            PlayerSource.InitStreamUrl()
+           else
+            handler.postDelayed(runnable, 600)
+          end
         end
       end
     end

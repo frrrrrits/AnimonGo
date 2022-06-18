@@ -321,9 +321,11 @@ item_download={
       TextView,
       id="item_title",
       textSize="13sp",
+      gravity="center",
+      layout_margin="10dp",
       layout_marginTop="35dp",
       layout_marginBottom="35dp",
-      textColor=textColorPrimary,
+      textColor=textColorPrimary,      
       layout_gravity="center",
       textAppearance="textAppearanceBody2",
     }

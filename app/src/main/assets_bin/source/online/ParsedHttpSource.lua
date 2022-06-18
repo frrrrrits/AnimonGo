@@ -1,4 +1,5 @@
 import "org.jsoup.*"
+import "util.api"
 import "data.TableData"
 import "data.TableUtil"
 import "util.widget.EmptyView"
@@ -14,11 +15,11 @@ function getLatestSelector()
 end
 
 function getEpisodeSelector()
-  return tostring(episodeSelector)
+  return episodeSelector
 end
 
 function getDownloadSelector()
-  return tostring(downloadSelector)
+  return downloadSelector
 end
 
 function getStreamSelector()
@@ -35,6 +36,10 @@ end
 
 function isStreamAble()
   return streamable
+end
+
+function useExtractor()
+  return useextractor
 end
 
 function updateDetail(fragment)
@@ -70,7 +75,7 @@ end
 
 function ParsedlatestUpdate(data, pages, adapter, ids, reload)
   local format_url = tostring(latestUpdateUrl):format(baseUrl, pages.page)
-  local options = { method = "GET", url = format_url }
+  local options = { method = "GET", url = format_url , headers = { api.user_agent }}
 
   if reload then
     TableUtil.clear(data)
@@ -123,7 +128,8 @@ end
 function ParsedEpisode(urlx, data, data2, data3, adapter, ids, fragment)
   if nilOrBlank(urlx) or urlx == nil then return end
   ids.swiperefresh.setRefreshing(true)
-  LuaHttp.request({url = urlx, method="GET"},function(error, code, body)
+
+  LuaHttp.request({url = urlx, method="GET", headers = { api.user_agent }},function(error, code, body)
     if error or code ~= 200 then
       ids.swiperefresh.setRefreshing(false)
       FetchOnError.onError(ids,code,function()
@@ -134,7 +140,11 @@ function ParsedEpisode(urlx, data, data2, data3, adapter, ids, fragment)
     end
 
     local jsouparse = Jsoup.parse(body)
-    local astable = luajava.astable(jsouparse.select(getEpisodeSelector()))
+    if type(getEpisodeSelector()) == "boolean" then
+      mselector = selectorEpisode(jsouparse) else
+      mselector = jsouparse.select(getEpisodeSelector())
+    end
+    local astable = luajava.astable(mselector)
 
     uihelper.runOnUiThread(fragment.getActivity(),function()
       TableUtil.clear(data) TableUtil.clear(data2) TableUtil.clear(data3)
@@ -153,7 +163,7 @@ function ParsedEpisode(urlx, data, data2, data3, adapter, ids, fragment)
       local eps_title = TableUtil.first(data).title
 
       data2.latesteps = "{title={"..eps_title.."},url={"..eps_url.."},update=noupdate}"
-     
+
       fetchDetail(data2, data3, jsouparse)
       DetailSummary.updateHeader()
 
@@ -169,7 +179,7 @@ function ParsedDownloadUrl(url, data, adapter, ids, fragment)
   if nilOrBlank(url) or url == nil then return end
 
   ids.swiperefresh.setRefreshing(true)
-  LuaHttp.request({url = url, method="GET"},function(error, code, body)
+  LuaHttp.request({url = url, method="GET", headers={api.user_agent}},function(error, code, body)
     if error or code ~= 200 then
       ids.swiperefresh.setRefreshing(false)
       MyToast.snackActions("Terjadi kesalahan, Gagal memuat data.","coba lagi",function()
@@ -179,14 +189,21 @@ function ParsedDownloadUrl(url, data, adapter, ids, fragment)
     end
 
     TableUtil.clear(data)
-    local jsouparse = Jsoup.parse(body)
-    local iterator = jsouparse.select(getDownloadSelector()).iterator()
 
-    uihelper.runOnUiThread(fragment.getActivity(),function()
-      while iterator.hasNext() do
-        local element = iterator.next()
-        fetchDownload(data, element, jsouparse)
+    local jsouparse = Jsoup.parse(body)
+    if type(getDownloadSelector()) == "boolean" then
+      mselector = selectorDownload(jsouparse) else
+      mselector = jsouparse.select(getDownloadSelector())
+    end
+
+    local astable = luajava.astable(mselector)
+
+    uihelper.runOnUiThread(fragment.getActivity(),function()      
+      for index, content in ipairs(astable) do
+        local document = Jsoup.parseBodyFragment(tostring(content))
+        fetchDownload(data, document, jsouparse)        
       end
+
       ids.swiperefresh.setRefreshing(false)
       adapter.notifyDataSetChanged()
     end)

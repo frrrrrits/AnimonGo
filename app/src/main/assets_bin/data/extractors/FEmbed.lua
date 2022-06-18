@@ -12,7 +12,8 @@ local domainUrl = "https://embedsito.com/api/source"
 
 FEmbed.getUrl = function(url, data)
   local headers={
-    'referer: ' .. url, 'user-agent: Mozilla/5.0 (Windows NT 6.1; rv:78.0) Gecko/20100101 Firefox/78.0'
+    'referer: ' .. url, 
+    'user-agent: Mozilla/5.0 (Windows NT 6.1; rv:78.0) Gecko/20100101 Firefox/78.0'
   }
   local new_url = string.format("%s/%s", domainUrl, tostring(url):gsub(".+/v/", ""))    
   LuaHttp.request({url = new_url, headers = headers, method="POST"}, function(error, code, body)

@@ -35,7 +35,7 @@ function createThemeStyleDialog(fragment)
   local dialog
   local sourceIndex = 1
   local data = Themes.APPTHEMES
-  
+
   local layout = {
     LinearLayout,
     layout_width="match_parent",
@@ -78,7 +78,7 @@ function createThemeStyleDialog(fragment)
         {
           AppCompatTextView,
           id="title",
-          layout_gravity="center",          
+          layout_gravity="center",
         },
       }
     },
@@ -121,11 +121,11 @@ end
 function createColumnsDialog(views, data)
   local ids={}
   local potrait = Preferences.potraitColumns():get()
-  local landscape = Preferences.landscapeColumns():get()  
+  local landscape = Preferences.landscapeColumns():get()
   return MaterialAlertDialogBuilder(this)
   .setTitle("Ukuran grid")
   .setView(loadlayout(PrefColumnsLayout, ids))
-  .setPositiveButton("Terapkan",function(view)    
+  .setPositiveButton("Terapkan",function(view)
     Preferences.potraitColumns().setpref(potrait)
     Preferences.landscapeColumns().setpref(landscape)
     columnsText=string.format("Potrait: %d, lanskap: %d", potrait, landscape)
@@ -151,10 +151,18 @@ end
 
 function deleteCovers()
   local cacheDir = File(activity.externalCacheDir, "cover_cache")
+  local exoPlayer = File(activity.externalCacheDir, "exoplayer")
+  
   table.foreach(luajava.astable(cacheDir.listFiles()),function(index,content)
     if content.exists() then
-      content.delete()
+      LuaUtil.rmDir(content)
       MyToast.showToast("Cache gambar di hapus")
+    end
+  end)
+
+  table.foreach(luajava.astable(exoPlayer.listFiles()),function(index,content)
+    if content.exists() then
+      LuaUtil.rmDir(content) 
     end
   end)
 end

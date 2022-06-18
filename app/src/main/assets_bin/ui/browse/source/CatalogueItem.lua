@@ -98,7 +98,7 @@ CatalogueItem.compact_grid={
               TextView,
               id="episode",
               ellipsize="end",
-              maxLines="2",              
+              maxLines="2",
               textColor = textColorSecondary,
             },                
         }

@@ -45,13 +45,14 @@ BottomSheetDownload.layout= {
       layout_height="match_parent",
       layout_width="match_parent",
       {
-        FrameLayout,
+        LinearLayout,
+        gravity="center|left",
         layout_height=actionbarSize,
-        layout_width="match_parent",
+        layout_width="match_parent",        
         {
           ImageButton,
           id="actionClose",
-          layout_margin="4dp",
+          layout_margin="3dp",
           src="@drawable/ic_window_close_24dp",
           colorFilter=colorOnSurface,
           layout_gravity="center|left",
@@ -60,10 +61,14 @@ BottomSheetDownload.layout= {
         {
           TextView,
           id="title",
-          textSize="19sp",
-          layout_gravity="center",
+          maxLines="1",
+          gravity="center",
+          ellipsize="end",
+          textSize="19sp",          
+          layout_gravity="center|right",
           layout_margin="8dp",
-          layout_marginLeft="12dp",
+          layout_marginLeft="14dp",
+          layout_marginRight="12dp",
           textColor=textColorPrimary,
         },
         {
@@ -132,7 +137,7 @@ function BottomSheetDownload:adapter(data)
       local holder=LuaRecyclerHolder(loadlayout(BottomSheetDownload.item, views))
       holder.itemView.setTag(views)
       views.card.onClick=function()
-        local pos=holder.getAdapterPosition() + 1
+        local pos=holder.getAdapterPosition() + 1        
         local url=data[pos].url
         if nilOrBlank(url) then
           MyToast("Laman tidak di temukan") else

@@ -62,8 +62,8 @@ function BrowseSource.fetchStreamUrl(_url, data)
     if nilOrBlank(_url) then
       print("Terjadi kesalahan, coba lagi.")
       return
-    end    
-    LuaHttp.request({url = _url, method="GET"},function(error, code, body)
+    end
+    LuaHttp.request({url = _url, method="GET", headers = { api.user_agent }},function(error, code, body)
       if error or code ~= 200 then
         print("Terjadi kesalahan gagal memuat streaming url")
         return
@@ -72,11 +72,22 @@ function BrowseSource.fetchStreamUrl(_url, data)
       local jsouparse = Jsoup.parse(body)
       local iterator = jsouparse.select(getStreamSelector()).iterator()
       uihelper.runOnUiThread(activity, function()
-        while iterator.hasNext() do
-          local element = iterator.next()
-          fetchStreamingLinks(element, jsouparse)
-          table.insert(data, {url = url})
-        end     
+        if BrowseSource.useExtractor() == false then
+          while iterator.hasNext() do
+            local element = iterator.next()
+            fetchStreamingLinks(element, jsouparse)
+            table.insert(data, {
+              name = name , play_url = url,
+              referer = referer, quality = quality
+            })
+          end
+         elseif BrowseSource.useExtractor() == nil then
+          while iterator.hasNext() do
+            local element = iterator.next()
+            fetchStreamingLinks(element, jsouparse)
+            table.insert(data, {url = url})
+          end
+        end
         PlayerSource.urlLoaded = true
       end)
     end)
@@ -87,8 +98,12 @@ function BrowseSource.baseUrl()
   return getBaseUrl()
 end
 
-function BrowseSource.streamAble()  
+function BrowseSource.streamAble()
   return isStreamAble()
+end
+
+function BrowseSource.useExtractor()
+  return useExtractor()
 end
 
 return BrowseSource

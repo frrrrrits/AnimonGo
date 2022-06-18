@@ -16,8 +16,7 @@ end
 
 ExtractorLink.get = function(url)
   local url = httpsify(url)
-  local stream_table = TableData.SourceStream
-  -- match each extractor    
+  local stream_table = TableData.SourceStream    
   if url:startwith(Blogger.mainUrl) then
     Blogger.getUrl(url, stream_table)
   end  

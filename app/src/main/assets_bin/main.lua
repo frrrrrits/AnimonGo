@@ -31,14 +31,14 @@ function onCreate(bundle)
 
   bottomNav = activity.findViewById(R.id.bottom_nav)
   bottomNav.setLabelVisibilityMode(0)
-  
-  ActivityUtil.setRoot(fragment_library.newInstance()) 
-  WindowCompat.setDecorFitsSystemWindows(window, false) 
-  
+
+  ActivityUtil.setRoot(fragment_library.newInstance())
+  WindowCompat.setDecorFitsSystemWindows(window, false)
+
   Insetter.builder()
   .padding(WindowInsetsCompat.Type.navigationBars())
   .applyToView(root)
-  
+
   UpdateAlert:createNotificationChannel(context)
 
   bottomNav.setOnNavigationItemSelectedListener{

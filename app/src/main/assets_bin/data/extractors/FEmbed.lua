@@ -21,11 +21,7 @@ FEmbed.getUrl = function(url, data)
     local json = cjson.decode(body)    
     if json.success == false then return end       
     for index, content in ipairs(json.data) do     
-      data[ #data + 1 ] = {
-        name = FEmbed.name,
-        play_url = content.file, referer = "",
-        quality = content.label,
-      }
+      extractLink( FEmbed.name, content.file, "", content.label)
     end
   end)
 end

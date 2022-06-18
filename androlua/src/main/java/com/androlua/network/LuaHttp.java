@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -33,9 +34,10 @@ public class LuaHttp {
     private LuaHttp() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS);
+                .readTimeout(30, TimeUnit.SECONDS)
+                .addNetworkInterceptor(new CacheInterceptor());
 
-        httpClient = createOkHttpClient(builder.build());
+        httpClient = builder.build();
     }
 
     public static LuaHttp getInstance() {
@@ -66,7 +68,7 @@ public class LuaHttp {
 
     public static void cancelWithTag(String tags) {
         for (Call call : getInstance().httpClient.dispatcher().queuedCalls()) {
-            if (call.request().tag().equals(tags)) {
+            if (Objects.equals(call.request().tag(), tags)) {
                 call.cancel();
             }
         }

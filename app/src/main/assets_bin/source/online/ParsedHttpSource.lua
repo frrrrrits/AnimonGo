@@ -2,6 +2,7 @@ import "org.jsoup.*"
 import "util.api"
 import "data.TableData"
 import "data.TableUtil"
+import "util.Base64Util"
 import "util.widget.EmptyView"
 import "source.online.FetchOnError"
 import "com.androlua.network.LuaHttp"
@@ -86,8 +87,9 @@ function ParsedlatestUpdate(data, pages, adapter, ids, reload)
   ids.swiperefresh.setRefreshing(true)
 
   LuaHttp.request(options,function(error, code, body)
-    if error or code ~= 200 then
+    if error or code ~= 200 then      
       local errMsg = tostring(error):gsub(".-:%s", "")
+      print(errMsg)
       ids.swiperefresh.setRefreshing(false)
       if pages.page == 1 then
         FetchOnError.onError(ids,code,function()

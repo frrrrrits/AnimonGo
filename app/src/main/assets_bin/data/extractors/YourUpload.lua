@@ -2,6 +2,7 @@ require "import"
 import "org.jsoup.*"
 import "com.androlua.network.LuaHttp"
 
+-- unused
 local YourUpload = {}
 local name = "YourUpload"
 local mainUrl = "https://www.yourupload.com"

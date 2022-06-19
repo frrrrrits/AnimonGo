@@ -8,12 +8,12 @@ import "util.extractor.ExtractorImport"
 
 function extractLink(name, url, referer, quality)
   local data = TableData.SourceStream
-  data[ #data + 1 ] = {
+  table.insert(data,{
     name = name,
     play_url = url,
     referer = referer,
     quality = quality,
-  }
+  })
 end
 
 string.startwith = function(self, str)
@@ -38,6 +38,7 @@ end
 function ExtractorLink.get(url)
   local url = httpsify(url)
   local stream_table = TableData.SourceStream
+ 
   if url:startwith(Blogger.mainUrl) then
     Blogger.getUrl(url, stream_table)
   end

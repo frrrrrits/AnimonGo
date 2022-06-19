@@ -70,7 +70,7 @@ local layout={
     layout_height="wrap",
     layout_margin="16dp",
     layout_gravity="bottom|right",
-    icon="@drawable/ic_bookmark__24dp",
+    icon="@drawable/ic_bookmark_24dp",
   },
   {
     ViewPager,

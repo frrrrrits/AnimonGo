@@ -124,7 +124,7 @@ PlayerSource.runhandler = function()
        elseif extractorAble() == true or extractorAble() == nil then
         if isemptytable(tbdata.StreamUrl) then
           handler.postDelayed(runnable, 600)
-         else
+         else         
           if urlloaded == false then
             PlayerSource.getSourceUrl()
           end
@@ -136,6 +136,7 @@ PlayerSource.runhandler = function()
           end
         end
       end
+      
     end
   })
   handler.postDelayed(runnable, 100)

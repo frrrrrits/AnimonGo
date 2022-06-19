@@ -40,7 +40,7 @@ local function setFavorieText()
     idsmain.actionFab.iconResource=R.drawable.ic_bookmark_add_24dp
    else
     idsmain.actionFab.text=stringToFavorite
-    idsmain.actionFab.iconResource=R.drawable.ic_bookmark__24dp
+    idsmain.actionFab.iconResource=R.drawable.ic_bookmark_24dp
   end
 end
 

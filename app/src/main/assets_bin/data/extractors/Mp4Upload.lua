@@ -19,7 +19,7 @@ end
 
 Mp4Upload.getUrl = function(url, data)
   LuaHttp.request({url = url, headers = { api.user_agent }, method="GET"}, function(error, code, body)
-    if error or code ~= 200 then return end        
+    if error or code ~= 200 then print("Blogger: Links not found") return end        
     local unpacked = getJsUnpacker(body)    
     local quality = string.match(unpacked, " HEIGHT=(%d+)")
     local link = srcRegex(unpacked)  

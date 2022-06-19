@@ -8,8 +8,8 @@ android {
         applicationId "id.lxs.animongo"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 1002
-        versionName "1.0.2"
+        versionCode 1003
+        versionName "1.0.3"
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }

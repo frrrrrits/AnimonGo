@@ -10,10 +10,10 @@ Open Source Aplikasi web scraper Anime Ongoing.
 
 
 ## Download
-Unduh di [Telegram channel](https://t.me/AnimeOngoLxs)
+Unduh di [Telegram channel](https://t.me/AnimeOngoLxs/23)
 
 ## Di buat dengan
-[AideLua](https://gitee.com/Jesse205/AideLua)
+[AideLua](https://github.com/Jesse205/Aide-Lua)
 
 ## Notes
 Aplikasi ini dibuat hanya untuk kebutuhan pribadi.

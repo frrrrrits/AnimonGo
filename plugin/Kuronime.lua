@@ -56,7 +56,7 @@ end
 
 function fetchStreamingLinks(element, jsoup)
     url = Jsoup.parse(decode(element.select("option").attr("value")))
-    .select("iframe").attr("src")
+    .select("iframe").attr("data-src")
 end
 
 function fetchEpisodeList(document)

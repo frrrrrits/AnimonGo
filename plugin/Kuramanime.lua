@@ -12,7 +12,7 @@ latestUpdateUrl = "%s&page=%s"
 latestSelector = "div[id*=animeList] > div.col-lg-4.col-md-6.col-sm-6"
 streamSelector = 'video#player > source'
 
-local detailUrlSelector = "div.episode__navigations > a.center__nav"
+local detailUrlSelector = "div.breadcrumb-option > div > div > div:nth-child(4) > div > span:nth-child(2) > a"
 local hasload = false
 
 local function changeStatus(str)
